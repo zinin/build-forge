@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to claude-forge will be documented here.
+All notable changes to build-forge will be documented here.
 
 ## [Unreleased]
 
