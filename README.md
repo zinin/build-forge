@@ -101,4 +101,4 @@ For reliable long builds (especially Gradle) configure the host once:
 
 ## See also
 
-- [claude-atlassian](https://github.com/zinin/claude-atlassian) — Jira ticket and Confluence page analysis plugin by the same author
+- [atlassian-scout](https://github.com/zinin/atlassian-scout) — Jira ticket and Confluence page analysis plugin by the same author
