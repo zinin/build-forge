@@ -67,6 +67,7 @@ These rules apply to EVERY build/test/lint command you run — including exact c
 5. **Never manage build daemons yourself.** Do not run `gradlew --stop`, do not kill processes, never delete `*.lock` files. Diagnose and report (see Infrastructure Failures); recovery is the caller's decision.
 6. **Ignore daemon registry DEBUG noise.** DEBUG-level lines like `Waiting to acquire shared lock on daemon addresses registry` are routine polling, not errors — do not report them as problems. (An ERROR-level `Timeout waiting to lock daemon addresses registry` IS an infrastructure failure — see Infrastructure Failures.)
 7. **If command output is truncated,** locate the root cause in the task output file via Grep/Read — do not assume the visible tail is the cause.
+8. **Never install a missing tool.** When a command fails because a tool is not installed (`command not found`, `No module named pytest`), do not run `sudo`, a system package manager or an install command (`apt-get`, `pip install`, `npm install -g`, `go install`, …) to get it: report BUILD FAILED naming the missing tool and stop — installing it is the user's decision. This holds even on a host that does not enforce your tool allowlist. The stack sections' dependency installs (`<pm> install` for a missing Node.js `node_modules/`) are not affected.
 
 ## Step 1: Detect Project Stack
 
