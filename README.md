@@ -21,9 +21,10 @@ updates (Gradle plugins, Google Maven).
 ```
 
 In Codex (`codex plugin add build-forge@zinin`), deps-update and both updaters passed the smoke
-(`codex exec` 0.157) with network on (`-c sandbox_workspace_write.network_access=true`; in an
-untrusted folder deps-update also needs `-s workspace-write`); `/build-forge:build` needs the
-build-runner agent, which Codex lacks, so deps-update skips its build check there.
+(`codex exec` 0.157) in a trusted folder or with `-s workspace-write` (an untrusted folder gets a
+read-only sandbox) and with network on (`-c sandbox_workspace_write.network_access=true`);
+`/build-forge:build` needs the build-runner agent, which Codex lacks, so deps-update skips its
+build check there.
 
 ## Dependencies
 
