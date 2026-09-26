@@ -1,6 +1,6 @@
 # build-forge
 
-Claude Code plugin: build/test/lint delegation and JVM/Android dependency
+Agent plugin: build/test/lint delegation and JVM/Android dependency
 updates (Gradle plugins, Google Maven).
 
 ## Features
@@ -19,6 +19,11 @@ updates (Gradle plugins, Google Maven).
 /plugin marketplace add zinin/agent-plugins
 /plugin install build-forge@zinin
 ```
+
+In Codex (`codex plugin add build-forge@zinin`), deps-update and both updaters passed the smoke
+(`codex exec` 0.157) with network on (`-c sandbox_workspace_write.network_access=true`; in an
+untrusted folder deps-update also needs `-s workspace-write`); `/build-forge:build` needs the
+build-runner agent, which Codex lacks, so deps-update skips its build check there.
 
 ## Dependencies
 
