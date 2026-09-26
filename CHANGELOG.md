@@ -2,6 +2,15 @@
 
 All notable changes to claude-forge will be documented here.
 
+## [Unreleased]
+
+### Changed
+- **Renamed from claude-forge to build-forge.** `/claude-forge:build` is `/build-forge:build`,
+  the agent is `build-forge:build-runner`, the updater skills are `build-forge:*`. Permission
+  rules that name the old skills (`Skill(claude-forge:…)`) need the new name.
+- **`deps-update` is a skill now** (`skills/deps-update/`): Codex loads skills, not commands.
+  The invocation stays `/build-forge:deps-update`.
+
 ## [0.2.0] - 2026-07-18
 
 ### Changed

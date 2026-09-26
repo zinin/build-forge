@@ -11,7 +11,7 @@ Run build, test, or lint tasks by dispatching the **build-runner** agent.
 
 ### Step 1: Dispatch build-runner agent
 
-Launch the `build-runner` agent via the Task tool with `subagent_type: "claude-forge:build-runner"`.
+Launch the `build-runner` agent via the Task tool with `subagent_type: "build-forge:build-runner"`.
 
 Pass the user's requested task in the prompt. Examples:
 
@@ -60,7 +60,7 @@ The agent will auto-detect the project stack. If you know the stack from context
 
 ### Step 2: Handle agent result
 
-(All build-runner dispatches below use the Task tool with `subagent_type: "claude-forge:build-runner"`.)
+(All build-runner dispatches below use the Task tool with `subagent_type: "build-forge:build-runner"`.)
 
 **Success** — report success, show build time
 

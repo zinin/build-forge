@@ -18,12 +18,12 @@ Determine project stack by checking CLAUDE.md and project files:
 ### Gradle projects (gradle-android, gradle-kotlin, gradle-java)
 
 #### 2a. Gradle Plugins
-Use skill **claude-forge:gradle-plugin-updater**:
+Use skill **build-forge:gradle-plugin-updater**:
 - Check plugins in `build.gradle.kts` and `settings.gradle.kts`
 - Update to latest stable versions
 
 #### 2b. AndroidX/Google Libraries (gradle-android only)
-Use skill **claude-forge:google-maven-updater**:
+Use skill **build-forge:google-maven-updater**:
 - Check AndroidX dependencies (androidx.*, Compose BOM)
 - Check Google libraries (Material, Play Services, Firebase)
 - Update to latest stable versions
@@ -52,7 +52,7 @@ Use MCP **sonatype-mcp** (getRecommendedComponentVersions):
 - `**/pom.xml` (all modules)
 
 ## After update
-1. Run `/claude-forge:build` to verify compatibility
+1. Run `/build-forge:build` to verify compatibility
 2. On errors — rollback problematic dependency
 
 ## Output format

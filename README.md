@@ -1,23 +1,23 @@
-# claude-forge
+# build-forge
 
 Claude Code plugin: build/test/lint delegation and JVM/Android dependency
 updates (Gradle plugins, Google Maven).
 
 ## Features
 
-(Slash commands are namespaced under `claude-forge:` — that is how Claude Code surfaces plugin commands.)
+(Slash commands are namespaced under `build-forge:` — that is how Claude Code surfaces plugin commands.)
 
-- **`/claude-forge:build`** — run build/test/lint for JVM (Gradle, Maven), Node.js, Go, or Python projects by dispatching the `claude-forge:build-runner` agent (clean context per attempt)
-- **`/claude-forge:deps-update`** — update project dependencies: Gradle plugins, AndroidX/Google artifacts, and other libraries via sonatype-mcp
-- **`claude-forge:build-runner` agent** — build verification engineer: detects the project stack, picks the JDK, runs the build, reports errors concisely
-- **`claude-forge:gradle-plugin-updater` skill** — search plugins and check latest versions on plugins.gradle.org (bundled helper script)
-- **`claude-forge:google-maven-updater` skill** — check AndroidX / Firebase / Play Services / Compose BOM versions on maven.google.com (bundled helper script)
+- **`/build-forge:build`** — run build/test/lint for JVM (Gradle, Maven), Node.js, Go, or Python projects by dispatching the `build-forge:build-runner` agent (clean context per attempt)
+- **`/build-forge:deps-update`** — update project dependencies: Gradle plugins, AndroidX/Google artifacts, and other libraries via sonatype-mcp
+- **`build-forge:build-runner` agent** — build verification engineer: detects the project stack, picks the JDK, runs the build, reports errors concisely
+- **`build-forge:gradle-plugin-updater` skill** — search plugins and check latest versions on plugins.gradle.org (bundled helper script)
+- **`build-forge:google-maven-updater` skill** — check AndroidX / Firebase / Play Services / Compose BOM versions on maven.google.com (bundled helper script)
 
 ## Install
 
 ```
-/plugin marketplace add zinin/claude-plugins
-/plugin install claude-forge@zinin
+/plugin marketplace add zinin/agent-plugins
+/plugin install build-forge@zinin
 ```
 
 ## Dependencies
