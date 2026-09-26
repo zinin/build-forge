@@ -12,8 +12,8 @@ All notable changes to build-forge will be documented here.
   The invocation stays `/build-forge:deps-update`.
 - **On Grok, `build` dispatches build-runner by type**: `spawn_subagent` with
   `subagent_type: "build-forge:build-runner"`. The skill named only the Task tool, and Grok ran
-  a general-purpose stand-in without the runner's tool limits. A stand-in is never used now:
-  without the type, the skill stops and tells the user.
+  a general-purpose stand-in without the runner's tool limits. The skill now forbids a
+  stand-in: if the typed call fails, it stops and tells the user (not yet exercised on Grok).
 - **build-runner reports a missing tool instead of installing it**: no `sudo`, package manager
   or install command, just BUILD FAILED naming the tool. Grok may not enforce the agent's
   `tools:` allowlist, and a stand-in runner there ran `sudo apt-get install`.
