@@ -2,7 +2,7 @@
 
 All notable changes to build-forge will be documented here.
 
-## [Unreleased]
+## [0.3.0] - 2026-09-27
 
 ### Changed
 - **Renamed from claude-forge to build-forge.** `/claude-forge:build` is `/build-forge:build`,
