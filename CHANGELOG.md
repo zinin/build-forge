@@ -1,6 +1,22 @@
 # Changelog
 
-All notable changes to claude-forge will be documented here.
+All notable changes to build-forge will be documented here.
+
+## [Unreleased]
+
+### Changed
+- **Renamed from claude-forge to build-forge.** `/claude-forge:build` is `/build-forge:build`,
+  the agent is `build-forge:build-runner`, the updater skills are `build-forge:*`. Permission
+  rules that name the old skills (`Skill(claude-forge:…)`) need the new name.
+- **`deps-update` is a skill now** (`skills/deps-update/`): Codex loads skills, not commands.
+  The invocation stays `/build-forge:deps-update`.
+- **On Grok, `build` dispatches build-runner by type**: `spawn_subagent` with
+  `subagent_type: "build-forge:build-runner"`. The skill named only the Task tool, and Grok ran
+  a general-purpose stand-in without the runner's tool limits. The skill now forbids a
+  stand-in: if the typed call fails, it stops and tells the user (not yet exercised on Grok).
+- **build-runner reports a missing tool instead of installing it**: no `sudo`, package manager
+  or install command, just BUILD FAILED naming the tool. Grok may not enforce the agent's
+  `tools:` allowlist, and a stand-in runner there ran `sudo apt-get install`.
 
 ## [0.2.0] - 2026-07-18
 
